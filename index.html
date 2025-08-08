@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App de Finanças Pessoais</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>💰 Finanças Pro</h1>
+    <button id="menuToggle" class="hamburger">☰</button>
+    <nav id="menu" class="hidden">
+      <button id="btnLimpar">Limpar dados</button>
+      <button id="btnImportar">Importar CSV</button>
+      <button id="btnExportar">Exportar CSV</button>
+      <button id="btnCategorias">Gerenciar categorias</button>
+      <button id="btnTema">Modo claro</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card entradas">
+        <h3>Entradas</h3>
+        <p id="totalEntradas">R$ 0,00</p>
+        <small id="countEntradas">0 transações</small>
+      </div>
+      <div class="card saidas">
+        <h3>Saídas</h3>
+        <p id="totalSaidas">R$ 0,00</p>
+        <small id="countSaidas">0 transações</small>
+      </div>
+      <div class="card saldo">
+        <h3>Saldo</h3>
+        <p id="saldo">R$ 0,00</p>
+        <small>—</small>
+        <div id="alertaSaldo" class="alerta hidden">⚠ Saldo negativo</div>
+      </div>
+    </section>
+
+    <section class="formulario">
+      <h2>Adicionar transação</h2>
+      <input type="date" id="data" />
+      <select id="tipo">
+        <option value="Entrada">Entrada</option>
+        <option value="Saída">Saída</option>
+      </select>
+      <select id="categoria"></select>
+      <input type="text" id="descricao" placeholder="Descrição" />
+      <input type="number" id="valor" placeholder="Valor (R$)" />
+      <button id="btnAdicionar">Adicionar</button>
+      <button id="btnSalvarEdicao" class="hidden">Salvar</button>
+      <button id="btnCancelarEdicao" class="hidden">Cancelar</button>
+    </section>
+
+    <section>
+      <h2>Transações</h2>
+      <input type="month" id="filtroMes" />
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th><th>Tipo</th><th>Categoria</th><th>Descrição</th><th>Valor</th><th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="listaTransacoes"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Fluxo do mês (R$)</h2>
+      <canvas id="graficoFluxo"></canvas>
+    </section>
+
+    <section>
+      <h2>Distribuição por categoria</h2>
+      <canvas id="graficoCategorias"></canvas>
+    </section>
+
+    <section>
+      <h2>Metas do mês</h2>
+      <div id="listaMetas"></div>
+    </section>
+
+    <section>
+      <h2>Relatório 6 meses</h2>
+      <canvas id="grafico6Meses"></canvas>
+    </section>
+  </main>
+
+  <div id="badgeTestes" class="badge">Testes OK</div>
+  <input type="file" id="inputCSV" accept=".csv" hidden />
+  <script src="script.js"></script>
+</body>
+</html>
