@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #18122B;
+  color: #fff;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4B0082;
+  padding: 10px;
+}
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+}
+nav.hidden {
+  display: none;
+}
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}
+.card {
+  background: #2D1B4A;
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.card.saldo.negative {
+  background: #8B0000;
+}
+.alerta {
+  background: #ff4444;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+.alerta.hidden {
+  display: none;
+}
+.formulario {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+input, select, button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+}
+button {
+  background: #8000ff;
+  color: #fff;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem;
+}
+table th, table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #444;
+}
+.badge {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: green;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
